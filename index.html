@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Scheduler</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Event Scheduler</h1>
+        
+        <div class="form-container">
+            <h2>Add an Event</h2>
+            <form id="eventForm">
+                <input type="text" id="description" placeholder="Event Description" required>
+                <input type="time" id="startTime" required>
+                <input type="time" id="endTime" required>
+                <button type="submit">Add Event</button>
+            </form>
+        </div>
+
+        <div class="conflicts-container">
+            <h2>Conflicts</h2>
+            <ul id="conflictsList"></ul>
+        </div>
+
+        <div class="available-time-container">
+            <h2>Available Time Slots</h2>
+            <ul id="availableSlotsList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

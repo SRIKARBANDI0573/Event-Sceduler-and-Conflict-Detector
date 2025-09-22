@@ -55,7 +55,6 @@ function displayConflicts() {
         });
     }
 }
-
 // Function to find and display available time slots
 function displayAvailableSlots() {
     const availableSlotsList = document.getElementById('availableSlotsList');

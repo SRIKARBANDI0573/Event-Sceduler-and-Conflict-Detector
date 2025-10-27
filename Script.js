@@ -63,7 +63,6 @@ function displayAvailableSlots() {
             availableSlots.push(`${currentEvent.endTime} to ${nextEvent.startTime}`);
         }
     }
- 
     if (availableSlots.length === 0) {
         availableSlotsList.innerHTML = '<li>No available slots.</li>';
     } else {

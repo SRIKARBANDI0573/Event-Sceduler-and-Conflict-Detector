@@ -1,6 +1,4 @@
- 
 let events = [];
- 
 document.getElementById('eventForm').addEventListener('submit', function (event) {
     event.preventDefault();
  
@@ -13,23 +11,17 @@ document.getElementById('eventForm').addEventListener('submit', function (event)
         startTime: startTime,
         endTime: endTime
     };
- 
     events.push(newEvent);
- 
     document.getElementById('eventForm').reset();
- 
     displayConflicts();
     displayAvailableSlots();
 });
- 
 function eventsOverlap(event1, event2) {
     return event1.startTime < event2.endTime && event2.startTime < event1.endTime;
 }
- 
 function displayConflicts() {
     const conflictsList = document.getElementById('conflictsList');
     conflictsList.innerHTML = '';
-
     const conflicts = [];
     for (let i = 0; i < events.length; i++) {
         for (let j = i + 1; j < events.length; j++) {
@@ -38,7 +30,6 @@ function displayConflicts() {
             }
         }
     }
-
     if (conflicts.length === 0) {
         conflictsList.innerHTML = '<li>No conflicts detected.</li>';
     } else {
@@ -50,15 +41,11 @@ function displayConflicts() {
 function displayAvailableSlots() {
     const availableSlotsList = document.getElementById('availableSlotsList');
     availableSlotsList.innerHTML = '';
- 
     events.sort((a, b) => a.startTime.localeCompare(b.startTime));
-
     const availableSlots = [];
- 
     for (let i = 0; i < events.length - 1; i++) {
         const currentEvent = events[i];
         const nextEvent = events[i + 1];
- 
         if (currentEvent.endTime < nextEvent.startTime) {
             availableSlots.push(`${currentEvent.endTime} to ${nextEvent.startTime}`);
         }

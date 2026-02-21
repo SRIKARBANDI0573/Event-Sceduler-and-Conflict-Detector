@@ -37,7 +37,7 @@ function displayConflicts() {
             conflictsList.innerHTML += `<li>${conflict}</li>`;
         });
     }
-} 
+}
 function displayAvailableSlots() {
     const availableSlotsList = document.getElementById('availableSlotsList');
     availableSlotsList.innerHTML = '';
